@@ -28,6 +28,7 @@ socket.on('Server-send-data', function(data) {
 
     $(".msg_card_body").scrollTop($(".msg_card_body")[0].scrollHeight);
 
+    $(".type_msg").val("");
     console.log(data);
 
 
@@ -55,6 +56,16 @@ $(document).ready(function() {
     });
 
 
+
+    var node = $(".send_btn");
+
+    document.addEventListener("keydown", function(event) {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            // Do more work
+            node.click();
+        }
+    });
 
 
 });
